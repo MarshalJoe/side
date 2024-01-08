@@ -1,6 +1,5 @@
-/**
- * Remove this content and start here
- */
+import Card from './components/Card';
+import { properties } from './properties';
 
 import heartFill from './assets/heart-fill.svg';
 import heartStroke from './assets/heart-stroke.svg';
@@ -9,29 +8,29 @@ function App() {
   return (
     <div
       style={{
-        maxWidth: '70%',
         padding: '1em',
         marginLeft: 'auto',
         marginRight: 'auto',
-        background: '#eee',
       }}
     >
-      <h1 className="text-3xl font-bold underline">Side React Take-home Assignment</h1>
-      <p>
-        Welcome to the Side React take-home assignment. This boilerplate is
-        intended to help get you started. It's already setup with the fonts and
-        SVG assets you will need to complete your assignment.
-      </p>
-      <p>
-        <em>
-          Be sure to read through the INSTRUCTIONS.md content before beginning.
-          Good luck!
-        </em>
-      </p>
-      <div>
-        <div>Here are the SVG assets you will need.</div>
-        <img src={heartFill} className="App-logo" alt="favorite icon" />
-        <img src={heartStroke} className="App-logo" alt="unfavorite icon" />
+      <h1 className="py-4 text-2xl font-bold underline">Property Listings</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {properties.map(prop => (
+          <div>
+            <Card
+              key={prop.mlsId}
+              bedrooms={prop.property.bedrooms}
+              bathsFull={prop.property.bathsFull}
+              bathsHalf={prop.property.bathsHalf}
+              area={prop.property.area}
+              listPrice={prop.listPrice}
+              address={prop.address}
+              listDate={prop.listDate}
+              imgUrl={prop.photos[0]}
+            />
+          </div>
+          ))
+        }
       </div>
     </div>
   );
