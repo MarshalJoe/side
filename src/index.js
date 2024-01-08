@@ -4,18 +4,36 @@ import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
+  Outlet,
 } from "react-router-dom";
 import App, { loader as rootLoader } from './App';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ErrorPage from "./error";
 import reportWebVitals from './reportWebVitals';
 
+function Layout() {
+  return (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+  );
+}
+
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    element: <Layout/>,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
-  },
+    children: [  
+      {
+        path: '/',
+        element: <App />,
+        loader: rootLoader,
+      },
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
