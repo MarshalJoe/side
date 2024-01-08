@@ -16,7 +16,7 @@ function App() {
         background: '#eee',
       }}
     >
-      <h1>Side React Take-home Assignment</h1>
+      <h1 className="text-3xl font-bold underline">Side React Take-home Assignment</h1>
       <p>
         Welcome to the Side React take-home assignment. This boilerplate is
         intended to help get you started. It's already setup with the fonts and
