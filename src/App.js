@@ -1,8 +1,5 @@
-import { Outlet, Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Card from './components/Card';
-import { properties } from './properties';
-import heartFill from './assets/heart-fill.svg';
-import heartStroke from './assets/heart-stroke.svg';
 
 export async function loader({ request }) {
   let response = await fetch('https://api.simplyrets.com/properties', {method:'GET', 
@@ -24,9 +21,10 @@ function App() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {properties.map(prop => (
-          <div>
+          <div key={prop.mlsId}>
             <Card
               key={prop.mlsId}
+              mlsId={prop.mlsId}
               bedrooms={prop.property.bedrooms}
               bathsFull={prop.property.bathsFull}
               bathsHalf={prop.property.bathsHalf}
