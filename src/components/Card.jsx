@@ -18,8 +18,8 @@ export default function Card({
 	imgUrl,
 }) {
   const displayBathrooms = (bathsFull * 1) + (bathsHalf * .5);
+  
   const [ favorite, setFavorite ] = useState(() => {
-  	// getting stored value
   	const saved = localStorage.getItem(mlsId);
   	const initialValue = JSON.parse(saved);
   	return initialValue || false;
