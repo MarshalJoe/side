@@ -42,6 +42,10 @@ I know that there are some `browserList` constants that are listed in the config
 
 I didn't implement `reportWebVitals()` because I didn't want to just log the results to the console (that would conflict with the AC). At the same time I didn't want to integrate a third party service because signing up for something like that seemed wildly out of scope. But of course in a production environment I would want it to go to somewhere - preferably a third-party service like Google Analytics or New Relic.
 
+### Fix the "Last Visited" Date
+
+Also ran out of time on this one. Was looking to do it without a date library of course or any third-party scripts, but didn't have time to complete it so I moved on. Right now I'm just providing the timestamp, but of course in production it would be the properly formatted date.
+
 ## Thank you for your consideration!
 
 This was a fun project that I think accurately reflects a FE Software Engineering position. It also had a sensible time frame, which I deeply appreciated.
